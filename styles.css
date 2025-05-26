@@ -1,0 +1,38 @@
+@import url('https://fonts.cdnfonts.com/css/salty-2');
+@import url('https://fonts.cdnfonts.com/css/fredoka');
+                          
+body{
+    background-color: #ed8eb8;
+}
+
+.Nama{
+    background-color: white;
+    height: 40px;
+    width: 250px;
+    text-align: center;
+    line-height: 40px;
+    margin: 40px auto;
+    font-size: larger;
+    font-weight: bold;
+    border-radius: 20px;
+    box-shadow: 0px 0px 0px 4px #e769a1,
+    0 0 0 8px white,
+    0 0 0 12px #e769a1;
+    font-family: 'Fredoka', sans-serif;                                          
+}
+
+.Tulisan{
+    background-color: white;
+    height: 500px;
+    width: 300px;
+    text-align: center;
+    line-height: 500px;
+    margin: 40px auto;
+    font-size: larger;
+    font-weight: bold;
+    border-radius: 20px;
+    box-shadow: 0px 0px 0px 4px #e769a1,
+    0 0 0 8px white,
+    0 0 0 12px #e769a1;
+    font-family: 'Fredoka', sans-serif;
+}
