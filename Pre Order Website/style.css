@@ -1,0 +1,259 @@
+/* Font */
+@import url('https://fonts.cdnfonts.com/css/lato');
+
+body{
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+}
+
+.container{
+    width: 100%;
+    height: 50em;
+    margin-top: 5em;
+    top: 5em;
+}
+.container h2, .container h1{
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+
+/* Input Nama */
+.inputData{
+    display: flex;
+    justify-self: center;
+    width: 20em;
+    padding: 1em;
+    margin-left: 1.5em;
+    border-radius: 2em;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid black;
+    margin-bottom: 1em;
+}
+
+
+/* Produk */
+.preOrderContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 100%;
+    height: 100%;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+    width: 15em;
+    height: 90%;
+    padding: .5em;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
+    border-radius:1em ;
+    font-family: 'Lato', sans-serif;
+}
+
+.card h3{
+    margin-bottom: .2em;
+}
+.card p{
+    margin-bottom: .5em;
+}
+
+.card img{
+    width: 80%;
+    height: 8em;
+    border: 1px solid black;
+    margin-top: 5px;
+    object-fit: cover;
+}
+
+.qty-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    width: fit-content;
+    height: 20px;
+    margin: 10px auto;
+}
+
+input[type="number"]{
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    padding: 0;
+    border: none;
+    text-align: center;
+    width: 30px;
+    font-size: 16px;
+    background: transparent;
+    outline: none;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    --moz-appearance: textfield;
+}
+.qty-btn {
+    border: none;
+    padding: 10px 10px;
+    width: 5px;
+    height: 5px;
+    cursor: pointer;
+}
+.plusbtn{
+    background: url(IMG/add-line.png);
+    background-color: #DB5746;
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.minbtn{
+    background: url(IMG/subtract-line.png);
+    background-color: #DB5746;
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+input[type="checkbox"]{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 1.5em;
+    padding: 1em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
+    border-radius:5em ;
+    background-color: #DB5746;
+    border: 1px solid #DB5746;
+    appearance: none;
+    transition: .3s ease;
+    cursor: pointer;
+}
+input[type="checkbox"]::after{
+    content: 'Pilih';
+    color: white;
+}
+input[type="checkbox"]:checked{
+    border: 1px solid #DB5746;
+    background-color: white;
+}
+input[type="checkbox"]:checked::after{
+    content: 'Pilih';
+    color: #DB5746;
+}
+
+/* Total Harga */
+
+/* Submit */
+button[type="submit"]{
+    width: 10em;
+    height: 2em;
+    border-radius: 10em;
+    padding: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2em auto;
+    outline: none;
+    border: 1px solid #DB5746;
+    background-color: #DB5746;
+    color: white;
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover{
+    border: 1px solid #DB5746;
+    background-color: white;
+    color: #DB5746;
+}
+
+button[type="submit"]:active{
+    border: 1px solid #DB5746;
+    background-color: white;
+    color: #DB5746;
+    transform: scale(.9);
+}
+
+.total{
+    border-bottom: 1px solid black;border-top: 1px solid black;
+    font-family: 'Lato', sans-serif;
+    width: 40%;
+    margin: 0 10px;
+    height: fit-content;
+    padding: 10px;
+}
+
+
+/* verifikasi */
+.verifikasi{
+    font-family: 'Lato', sans-serif;
+    display: none;
+    position: fixed;
+    width: 15em;
+    padding: 1em;
+    background-color: white;
+    text-align: center;
+    top: 40%;
+    left: 40%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
+    border-radius: 1em;
+    animation: FadeIn .3s forwards;
+}
+
+.verifikasi button{
+    margin-right: 1em;
+    margin-left: 1em;
+    width: 5em;
+    height: 2em;
+    outline: none;
+    border: 1px solid #DB5746;
+    border-radius: 2em;
+    color: white;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.verifikasi .yes{background-color: #DB5746;}
+.verifikasi .yes:hover{
+    background-color: white;
+    border: 1px solid #DB5746;
+    color: #DB5746;
+}
+
+.verifikasi button:active{
+    transform: scale(.9);
+}
+
+@keyframes FadeIn{
+    0%{
+        opacity: 0;
+        transform: scale(.2);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes FadeOut{
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(.2);
+    }
+}
