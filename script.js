@@ -179,10 +179,10 @@ yesBtn.addEventListener('click', () => {
     "Content-Type": "text/plain;charset=utf-8"
   },
   body: JSON.stringify({
-    nama: "Tes Nama",
-    alamat: "Tes Alamat",
-    daftarProduk: "Beberapa Produk",
-    totalHarga: "Rp10000"
+    nama: nama,
+    alamat: alamat,
+    daftarProduk: daftarProduk,
+    totalHarga: `Rp${totalHarga.toLocaleString('id-ID')}`
   })
 })
 .then(res => res.text())
@@ -194,6 +194,7 @@ yesBtn.addEventListener('click', () => {
 });
     verifikasiNode.style.display = 'none';
 });
+
 
 
 
