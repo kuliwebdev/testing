@@ -173,31 +173,28 @@ yesBtn.addEventListener('click', () => {
     };
 
     // Ganti URL di bawah dengan URL Google Apps Script kamu
-    fetch("https://script.google.com/macros/s/AKfycbwIAoyQ11OIWEhCLkt4go2qkWV6OTtevb3YI4EuBUVf02q2EI0qucQ7WXYtA-VMhdA-/exec", {
-        method: "POST",
-        mode: "no-cors", // SEMENTARA
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
-    .then(res => res.json())
-.then(res => {
-    console.log("Response from Apps Script:", res);
-    if (res.result === "success") {
-        alert("Pesanan berhasil dikirim!");
-        location.reload();
-    } else {
-        alert("Gagal mengirim pesanan: " + (res.message || "Tanpa pesan error"));
-    }
+   fetch("https://script.google.com/macros/s/AKfycbwIAoyQ11OIWEhCLkt4go2qkWV6OTtevb3YI4EuBUVf02q2EI0qucQ7WXYtA-VMhdA-/exec", {
+  method: "POST",
+  headers: {
+    "Content-Type": "text/plain;charset=utf-8"
+  },
+  body: JSON.stringify({
+    nama: "Tes Nama",
+    alamat: "Tes Alamat",
+    daftarProduk: "Beberapa Produk",
+    totalHarga: "Rp10000"
+  })
+})
+.then(res => res.text())
+.then(text => {
+  console.log("Response text:", text);
 })
 .catch(err => {
-    console.error("Fetch error:", err);
-    alert("Terjadi kesalahan saat mengirim data.");
+  console.error("Fetch error:", err);
 });
-
     verifikasiNode.style.display = 'none';
 });
+
 
 
 
