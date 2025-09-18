@@ -175,6 +175,7 @@ yesBtn.addEventListener('click', () => {
     // Ganti URL di bawah dengan URL Google Apps Script kamu
     fetch("https://script.google.com/macros/s/AKfycbwIAoyQ11OIWEhCLkt4go2qkWV6OTtevb3YI4EuBUVf02q2EI0qucQ7WXYtA-VMhdA-/exec", {
         method: "POST",
+        mode: "no-cors", // SEMENTARA
         body: JSON.stringify(data),
         headers: {
             "Content-Type": "application/json"
@@ -197,5 +198,6 @@ yesBtn.addEventListener('click', () => {
 
     verifikasiNode.style.display = 'none';
 });
+
 
 
