@@ -358,7 +358,7 @@ yesBtn.addEventListener('click', () => {
 
     // Ganti URL di bawah dengan URL Google Apps Script kamu
     
-fetch("https://netlify-proxyy.netlify.app/.netlify/functions/order", {
+fetch("https://script.google.com/macros/s/AKfycbxD043F1FOvCWL8JWmqRrRcEzhGHkzV-bA7Iu0Ieu3nTbbh9uWKmq05khv3OzLoZlSnJA/exec", {
   method: "POST",
   mode: "cors", 
   headers: {
@@ -389,6 +389,7 @@ fetch("https://netlify-proxyy.netlify.app/.netlify/functions/order", {
 
 
 });
+
 
 
 
