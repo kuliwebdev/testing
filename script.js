@@ -358,33 +358,32 @@ yesBtn.addEventListener('click', () => {
 
   
     // gunakan ini di script.js (bagian yang mengirim data)
-fetch("https://script.google.com/macros/s/AKfycbxD043F1FOvCWL8JWmqRrRcEzhGHkzV-bA7Iu0Ieu3nTbbh9uWKmq05khv3OzLoZlSnJA/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbxD043F1FOvCWL8JWmqRrRcEzhGHkzV-bA7Iu0Ieu3nTbbh9uWKmq05khv3OzLoZlSnJA/exec", {
   method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
+  headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+  body: new URLSearchParams({
     nama: nama,
     alamat: alamat,
     daftarProduk: daftarProduk,
     totalHarga: totalHarga
   })
 })
-.then(res => res.text()) // ambil text dulu
+.then(res => res.text())
 .then(txt => {
   try {
     const data = JSON.parse(txt || "{}");
     console.log("Response parsed:", data);
-    // tampilkan ke UI
   } catch (err) {
     console.warn("Response not JSON or empty:", txt);
   }
 })
-.catch(err => {
-  console.error("Fetch error:", err);
+.catch(err => console.error("Fetch error:", err));
+
+
+
+
 });
 
-
-
-});
 
 
 
