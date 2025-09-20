@@ -361,7 +361,7 @@ yesBtn.addEventListener('click', () => {
 fetch("https://script.google.com/macros/s/AKfycbxD043F1FOvCWL8JWmqRrRcEzhGHkzV-bA7Iu0Ieu3nTbbh9uWKmq05khv3OzLoZlSnJA/exec", {
   method: "POST",
   headers: {
-    "Content-Type": "application/x-www-form-urlencoded"
+    "Content-Type": "multipart/form-data"
   },
   body: JSON.stringify({
     nama: nama,
