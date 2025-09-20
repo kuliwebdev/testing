@@ -358,27 +358,28 @@ yesBtn.addEventListener('click', () => {
 
     // Ganti URL di bawah dengan URL Google Apps Script kamu
    fetch("https://script.google.com/macros/s/AKfycbxD043F1FOvCWL8JWmqRrRcEzhGHkzV-bA7Iu0Ieu3nTbbh9uWKmq05khv3OzLoZlSnJA/exec", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    nama: nama,
-    alamat: alamat,
-    daftarProduk: daftarProduk,
-    totalHarga: `Rp${totalHarga.toLocaleString('id-ID')}`
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      nama: nama,
+      alamat: alamat,
+      daftarProduk: daftarProduk,
+      totalHarga: totalHarga
+    })
   })
-})
-.then(res => res.json())
-.then(data => {
-  console.log("Response JSON:", data);
-})
-.catch(err => {
-  console.error("Fetch error:", err);
-});
+  .then(res => res.json())
+  .then(data => {
+    console.log("Response:", data);
+    alert("Order berhasil dikirim!");
+  })
+  .catch(err => {
+    console.error("Fetch error:", err);
+    alert("Gagal mengirim data!");
+  });
 
 
 });
+
 
 
 
