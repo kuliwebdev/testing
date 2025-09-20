@@ -336,7 +336,7 @@ yesBtn.addEventListener('click', () => {
                     
                     setTimeout(() => {
                 loadingContainer.style.display = 'none';
-                window.location.reload();
+                // window.location.reload();
             }, 2000);
             }, 100);
                 }, 500);
@@ -356,43 +356,38 @@ yesBtn.addEventListener('click', () => {
         totalHarga: `Rp${totalHarga.toLocaleString('id-ID')}`
     };
 
-  
-    // gunakan ini di script.js (bagian yang mengirim data)
-  fetch("https://script.google.com/macros/s/AKfycbxD043F1FOvCWL8JWmqRrRcEzhGHkzV-bA7Iu0Ieu3nTbbh9uWKmq05khv3OzLoZlSnJA/exec", {
+    // Ganti URL di bawah dengan URL Google Apps Script kamu
+    
+fetch("https://script.google.com/macros/s/AKfycbxD043F1FOvCWL8JWmqRrRcEzhGHkzV-bA7Iu0Ieu3nTbbh9uWKmq05khv3OzLoZlSnJA/exec", {
   method: "POST",
-  headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  body: new URLSearchParams({
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
     nama: nama,
     alamat: alamat,
     daftarProduk: daftarProduk,
-    totalHarga: totalHarga
+    totalHarga: `Rp${totalHarga.toLocaleString('id-ID')}`
   })
 })
-.then(res => res.text())
-.then(txt => {
-  console.log("Response text:", txt);
-  try {
-    const data = JSON.parse(txt);
-    console.log("Parsed:", data);
-    alert("Order berhasil dikirim!");
-  } catch (e) {
-    console.warn("Bukan JSON:", txt);
-  }
+.then(res => res.json())
+.then(data => {
+  console.log("Response text:", data);
 })
 .catch(err => {
   console.error("Fetch error:", err);
-  alert("Gagal mengirim data!");
 });
+    verifikasiNode.style.display = 'none';
+
+
+
+
 
 
 
 
 
 });
-
-
-
-
 
 
 
