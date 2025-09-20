@@ -1,0 +1,80 @@
+cara kerja pengiriman data :
+
+(input -- masukan ke variabel data -- kirim ke apps script -- masukan data ke spreadsheet)
+
+Kode Pengiriman dari input = 
+
+const data = {
+        nama: nama,
+        alamat: alamat,
+        daftarProduk: daftarProduk,
+        totalHarga: `Rp${totalHarga.toLocaleString('id-ID')}`
+    };
+
+const sheetAppUrl = 'URL_APPS_SCRIPT_ANDA'; 
+
+async function sendDataToGoogleSheet() {
+    try {
+        const response = await fetch(sheetAppUrl, {
+            method: 'POST',
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.text();
+        console.log('Respons dari Google Apps Script:', result);
+        alert('Data berhasil dikirim ke spreadsheet!');
+    } catch (error) {
+        console.error('Gagal mengirim data:', error);
+        alert('Gagal mengirim data.');
+    }
+}
+
+sendDataToGoogleSheet();
+
+Kode Memasukan Data Ke SpreadSheet =
+
+function doPost(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1");
+
+    // Parsing data yang dikirim dari GitHub
+    var payload = JSON.parse(e.postData.contents);
+
+    var lastRow = sheet.getLastRow();
+    // var nextNomor = lastRow + 1;
+    var nextNomor;
+    if (lastRow === 1) {
+      nextNomor = 1;
+    } else {
+      var lastNomor = sheet.getRange(lastRow, 1).getValue();
+      nextNomor = lastNomor + 1;
+    }
+
+    // Buat array dari nilai-nilai yang Anda butuhkan
+    var rowData = [
+      nextNomor,
+      new Date(),
+      payload.nama,
+      payload.alamat,
+      payload.daftarProduk,
+      payload.totalHarga,
+    ];
+
+    // Tambahkan baris baru ke spreadsheet
+    sheet.appendRow(rowData);
+
+    // Berikan respons sukses
+    return ContentService.createTextOutput("Data berhasil ditambahkan.").setMimeType(ContentService.MimeType.TEXT);
+
+  } catch (error) {
+    // Jika ada error, berikan respons error
+    return ContentService.createTextOutput("Terjadi kesalahan: " + error.toString()).setMimeType(ContentService.MimeType.TEXT);
+  }
+}
+
+Kesalahan Kecil Namun Fatal : (Harus Hapus Bagian Tersebut)
+
+headers: {
+    "Content-Type": "application/json"
+  },
+
