@@ -357,7 +357,7 @@ yesBtn.addEventListener('click', () => {
     };
 
     // Ganti URL di bawah dengan URL Google Apps Script kamu
-   fetch("https://script.google.com/macros/s/AKfycbxtEvp7Tddwi76ZLKdMk9EbapTU9gZUBpR5qbnqHiQ-MgDiiDOdPrxKT1vI9PQu3h87/exec", {
+   fetch("https://script.google.com/macros/s/AKfycbxD043F1FOvCWL8JWmqRrRcEzhGHkzV-bA7Iu0Ieu3nTbbh9uWKmq05khv3OzLoZlSnJA/exec", {
   method: "POST",
   headers: {
     "Content-Type": "text/plain;charset=utf-8"
@@ -378,6 +378,7 @@ yesBtn.addEventListener('click', () => {
 });
     verifikasiNode.style.display = 'none';
 });
+
 
 
 
