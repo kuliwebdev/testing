@@ -356,28 +356,6 @@ yesBtn.addEventListener('click', () => {
         totalHarga: `Rp${totalHarga.toLocaleString('id-ID')}`
     };
 
-    // Ganti URL di bawah dengan URL Google Apps Script kamu
-    
-fetch("https://script.google.com/macros/s/AKfycbxD043F1FOvCWL8JWmqRrRcEzhGHkzV-bA7Iu0Ieu3nTbbh9uWKmq05khv3OzLoZlSnJA/exec", {
-  method: "POST",
-  headers: {
-    "Content-Type": "multipart/form-data"
-  },
-  body: JSON.stringify({
-    nama: nama,
-    alamat: alamat,
-    daftarProduk: daftarProduk,
-    totalHarga: `Rp${totalHarga.toLocaleString('id-ID')}`
-  })
-})
-.then(res => res.text())
-.then(text => {
-  console.log("Response text:", text);
-})
-.catch(err => {
-  console.error("Fetch error:", err);
-});
-    verifikasiNode.style.display = 'none';
 
 
 
