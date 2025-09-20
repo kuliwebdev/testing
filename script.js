@@ -360,7 +360,6 @@ yesBtn.addEventListener('click', () => {
     
 fetch("https://script.google.com/macros/s/AKfycbxD043F1FOvCWL8JWmqRrRcEzhGHkzV-bA7Iu0Ieu3nTbbh9uWKmq05khv3OzLoZlSnJA/exec", {
   method: "POST",
-  mode: "cors", 
   headers: {
     "Content-Type": "text/plain;charset=utf-8"
   },
@@ -389,6 +388,7 @@ fetch("https://script.google.com/macros/s/AKfycbxD043F1FOvCWL8JWmqRrRcEzhGHkzV-b
 
 
 });
+
 
 
 
