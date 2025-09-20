@@ -362,7 +362,7 @@ fetch("https://script.google.com/macros/s/AKfycbxD043F1FOvCWL8JWmqRrRcEzhGHkzV-b
   method: "POST",
   mode: "no-cors", 
   headers: {
-    "Content-Type": "application/json"
+    "Content-Type": "text/plain;charset=utf-8"
   },
   body: JSON.stringify({
     nama: nama,
@@ -371,9 +371,9 @@ fetch("https://script.google.com/macros/s/AKfycbxD043F1FOvCWL8JWmqRrRcEzhGHkzV-b
     totalHarga: `Rp${totalHarga.toLocaleString('id-ID')}`
   })
 })
-.then(res => res.json())
-.then(data => {
-  console.log("Response text:", data);
+.then(res => res.text())
+.then(text => {
+  console.log("Response text:", text);
 })
 .catch(err => {
   console.error("Fetch error:", err);
@@ -389,6 +389,7 @@ fetch("https://script.google.com/macros/s/AKfycbxD043F1FOvCWL8JWmqRrRcEzhGHkzV-b
 
 
 });
+
 
 
 
