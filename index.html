@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/lato" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet">
+    <title>PreOrder Website</title>
+</head>
+<body>
+
+    
+<div id="mainContainer">
+    <div class="dataPemesanan">
+        <h1 class="Judul">PreOrder</h1>
+        <p>Isi Data Pemesanan Anda</p>
+        <input type="text" class="inputData inputNama" placeholder="Masukan Nama">
+        <input type="text" class="inputData inputAlamat" placeholder="Masukan Alamat">
+    </div>
+
+    <div class="container">
+        <div class="subtitle">
+        <h2>Pilih Produk</h2>
+        </div>
+        <div class="preOrderContainer">
+
+            <div class="card product-1" data-price="30000">
+                <img src="IMG/NoImage.jpg" alt="GambarProduk">
+                <h3>Makanan</h3>
+                <p>Rp30.000</p>
+                <div class="qty-container">
+                    <button type="button" class="qty-btn minbtn" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                        <input type="number" id="QTY" class="Quantity" name="qty" value="0" min="1" max="100">
+                    <button type="button" class="qty-btn plusbtn" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></button>
+                </div>
+                <input type="checkbox" class="product-checkbox" data-product-id="1">
+            </div>
+
+            <div class="card product-1" data-price="15000">
+                <img src="IMG/NoImage.jpg" alt="GambarProduk">
+                <h3>Minuman</h3>
+                <p>Rp15.000</p>
+                <div class="qty-container">
+                    <button type="button" class="qty-btn minbtn" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                        <input type="number" id="QTY" class="Quantity" name="qty" value="0" min="1" max="100">
+                    <button type="button" class="qty-btn plusbtn" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></button>
+                </div>
+                <input type="checkbox" class="product-checkbox" data-product-id="1">
+            </div>
+</div>
+
+        
+    </div>
+
+    
+    <div class="TotalContainer">
+        <div class="subtitle">
+        <h2>Subtotal</h2>
+        </div>
+        <div class="total"></div>
+        <div class="subtitle">
+        <h2>Total</h2>
+        </div>
+        <div class="TotalPembayaran"></div>
+        <button type="submit" id="order">Order</button>
+
+    </div>
+
+    <div class="nextprevContainer">
+        <button id="Next">Next</button>
+        <button id="Prev">Prev</button>
+    </div>
+
+
+    <div class="verifikasi">
+        <p>Anda Yakin?</p>
+        <button class="yes">Ya</button>
+        <button class="cancel" style="background-color: white; color: #DB5746; border: 1px solid #DB5746;">Tidak</button>
+    </div>
+
+    <div class="loading">
+        <h3 class="textMengirim">Mengirim</h3>
+        <div class="progress-container">
+            <div class="progress-bar" style=" background: #DB5746;"></div>
+            </div>
+        <div class="selesai">
+            <img src="IMG/checkbox-circle-line.png" alt="">
+            <p>Terima Kasih Sudah Order</p>
+        </div>
+    </div>
+
+    <div class="errorMessage">
+        <img src="IMG/close-circle-line.png" alt="">
+        <p id="Message"></p>
+    </div>
+
+    <div class="blurdiv"></div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
